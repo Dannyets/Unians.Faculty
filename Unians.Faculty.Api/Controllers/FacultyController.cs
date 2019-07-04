@@ -13,13 +13,11 @@ namespace Faculty.Api.Controllers
     public class FacultyController : BaseEfCrudController<ApiFaculty, DbFaculty>
     {
         private IFacultyRepository _repository;
-        private IMapper _mapper;
 
         public FacultyController(IFacultyRepository repository, 
                                  IMapper mapper) : base(repository, mapper)
         {
             _repository = repository;
-            _mapper = mapper;
         }
 
         [HttpGet]
