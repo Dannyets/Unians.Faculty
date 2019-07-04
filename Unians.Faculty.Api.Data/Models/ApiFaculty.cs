@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace Faculty.Api.Models
+﻿namespace Unians.Faculty.Api.Data.Models
 {
-    public class FacultyApiModel
+    public class ApiFaculty
     {
         public int Id { get; set; }
 

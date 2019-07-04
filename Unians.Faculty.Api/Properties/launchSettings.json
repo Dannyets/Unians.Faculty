@@ -3,7 +3,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:49287",
+      "applicationUrl": "http://localhost:49196",
       "sslPort": 0
     }
   },
@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Faculty.Api": {
+    "Unians.Faculty.Api": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",
@@ -29,9 +29,9 @@
     "Docker": {
       "commandName": "Docker",
       "launchBrowser": true,
-      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/api/values",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
       "environmentVariables": {},
-      "httpPort": 49288
+      "httpPort": 49199
     }
   }
 }

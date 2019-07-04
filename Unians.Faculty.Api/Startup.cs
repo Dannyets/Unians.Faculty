@@ -1,22 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using AspNetCore.Infrastructure.Repositories.EntityFrameworkCore.MySql;
 using AutoMapper;
-using BaseRepositories.EntityFrameworkCore.MySql;
-using Faculty.DAL;
-using Faculty.DAL.Interfaces;
-using Faculty.DAL.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
+using Unians.Faculty.Data.Context;
+using Unians.Faculty.Data.Interfaces;
+using Unians.Faculty.Data.Repositories;
 
-namespace Faculty.Api
+namespace Unians.Faculty.Api
 {
     public class Startup
     {
@@ -33,6 +29,8 @@ namespace Faculty.Api
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddDbContext<FacultyDbContext>();
+
+            services.AddTransient<DbContext, FacultyDbContext>();
 
             services.AddTransient<IFacultyRepository, FacultyRepository>();
 
@@ -71,6 +69,7 @@ namespace Faculty.Api
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Faculty Web Api");
             });
+
 
             app.UseMvc();
         }
