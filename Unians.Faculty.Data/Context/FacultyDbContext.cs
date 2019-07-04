@@ -34,6 +34,7 @@ namespace Unians.Faculty.Data.Context
             var faculty = new DbFaculty
             {
                 Id = 1,
+                UniversityId = 1,
                 Name = "מדעי המחשב",
                 CreatedAt = DateTime.UtcNow,
                 LastUdpatedAt = DateTime.UtcNow

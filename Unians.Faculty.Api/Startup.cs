@@ -1,5 +1,5 @@
 ﻿using System;
-using AspNetCore.Infrastructure.Repositories.EntityFrameworkCore.MySql;
+using AspNetCore.Infrastructure.Repositories.EntityFrameworkCore.Helpers;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -56,7 +56,8 @@ namespace Unians.Faculty.Api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider serviceProvider)
         {
-            MySqlDbHelper.MigrateDatabase<FacultyDbContext>(serviceProvider);
+            //TODO: CHANGE TO MIGRATE ONCE DB IS CREATED
+            DatabaseHelper.EnsureDatabaseCreated<FacultyDbContext>(serviceProvider);
 
             if (env.IsDevelopment())
             {
@@ -69,7 +70,6 @@ namespace Unians.Faculty.Api
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Faculty Web Api");
             });
-
 
             app.UseMvc();
         }
