@@ -9,6 +9,7 @@
     <PackageProjectUrl>https://github.com/Dannyets/Unians.Faculty</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Dannyets/Unians.Faculty</RepositoryUrl>
     <Version>1.0.0</Version>
+    <PackageId>Unians.Faculty.Api.Data</PackageId>
   </PropertyGroup>
 
 </Project>
