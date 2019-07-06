@@ -31,16 +31,49 @@ namespace Unians.Faculty.Data.Context
 
         private void AddInitialData(ModelBuilder modelBuilder)
         {
-            var faculty = new DbFaculty
+            var faculties = new List<DbFaculty>
             {
-                Id = 1,
-                UniversityId = 1,
-                Name = "מדעי המחשב",
-                CreatedAt = DateTime.UtcNow,
-                LastUdpatedAt = DateTime.UtcNow
+                new DbFaculty
+                {
+                    Id = 1,
+                    UniversityId = 1,
+                    Name = "מדעי המחשב",
+                    CreatedAt = DateTime.UtcNow,
+                    LastUdpatedAt = DateTime.UtcNow,
+                },
+                new DbFaculty
+                {
+                    Id = 2,
+                    UniversityId = 2,
+                    Name = "מדעי המחשב",
+                    CreatedAt = DateTime.UtcNow,
+                    LastUdpatedAt = DateTime.UtcNow,
+                },
+                new DbFaculty
+                {
+                    Id = 3,
+                    UniversityId = 3,
+                    Name = "מדעי המחשב",
+                    CreatedAt = DateTime.UtcNow,
+                    LastUdpatedAt = DateTime.UtcNow,
+                },
+                new DbFaculty
+                {
+                    Id = 4,
+                    UniversityId = 1,
+                    Name = "רפואה",
+                    CreatedAt = DateTime.UtcNow,
+                    LastUdpatedAt = DateTime.UtcNow,
+                },
+                new DbFaculty
+                {
+                    Id = 5,
+                    UniversityId = 1,
+                    Name = "הנדסת מכונות",
+                    CreatedAt = DateTime.UtcNow,
+                    LastUdpatedAt = DateTime.UtcNow,
+                }
             };
-
-            var faculties = new List<DbFaculty> { faculty };
 
             modelBuilder.Entity<DbFaculty>().HasData(faculties);
         }
